@@ -1,4 +1,15 @@
-# innet templates
+# be
 
-- [fe](https://github.com/d8corp/innetjs-templates/tree/fe) - frontend application template
-- [be](https://github.com/d8corp/innetjs-templates/tree/be) - api service template
+This is the simplest template of innet.js using for server side.
+
+To start development run:
+```shell
+npm start
+```
+
+To build the application run:
+```shell
+npm run build
+```
+
+

@@ -1,7 +1,3 @@
-/node_modules/
-/build/
-
-localhost.crt
-localhost.key
-
 .idea
+node_modules
+build
