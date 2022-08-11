@@ -2,8 +2,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "npx innetjs build",
-    "start": "npx innetjs start",
+    "build": "innetjs build",
+    "start": "innetjs start",
     "lint": "eslint --ext .tsx,.ts src",
     "lint:fix": "eslint --ext .tsx,.ts src --fix"
   },
@@ -24,6 +24,6 @@
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "innetjs": "^1.12.1"
+    "innetjs": "^2.0.0"
   }
 }
