@@ -10,7 +10,7 @@
   "dependencies": {
     "@innet/dom": "^0.4.3",
     "@innet/jsx": "^1.0.2",
-    "html-classes": "^1.2.0",
+    "html-classes": "^2.0.1",
     "innet": "^1.0.0",
     "watch-state": "^3.4.3"
   },
@@ -24,6 +24,6 @@
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "innetjs": "^2.0.1"
+    "innetjs": "^2.0.3"
   }
 }

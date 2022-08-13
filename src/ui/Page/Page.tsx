@@ -26,10 +26,10 @@ export function Page <T extends object> (props: PageProps<T>) {
   return (
     <delay ref={hidden} show={300} hide={300}>
       <div
-        class={() => classes(
+        class={() => classes([
           styles.root,
           hidden.value.value && styles.hide,
-        )}>
+        ])}>
         {contentChildren}
       </div>
     </delay>
