@@ -1,4 +1,4 @@
-import { Page } from '../Page'
+import { Page } from '/view/Page'
 
 import appStyles from './App.css'
 

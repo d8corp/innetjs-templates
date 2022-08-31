@@ -1,6 +1,8 @@
 # be
 
-This is the simplest template of innet.js using for server side.
+This is a template of `innetjs` to build server side application.
+
+This template includes linting and testing.
 
 To start development run:
 ```shell
