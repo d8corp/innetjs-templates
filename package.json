@@ -9,23 +9,23 @@
     "lint:fix": "eslint src --ext .ts,.tsx --fix"
   },
   "dependencies": {
-    "@innet/jsx": "^1.0.4",
-    "@innet/server": "^1.4.0",
-    "innet": "^1.0.0"
+    "@innet/jsx": "^1.1.0",
+    "@innet/server": "^1.6.1",
+    "innet": "^1.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.36.0",
-    "@typescript-eslint/parser": "^5.36.0",
-    "core-js": "^3.25.0",
-    "eslint": "^8.21.0",
+    "@types/jest": "^29.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "core-js": "^3.26.0",
+    "eslint": "^8.27.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "innet-jest": "^1.3.2",
-    "innetjs": "^2.0.12"
+    "innetjs": "^2.2.6"
   }
 }
