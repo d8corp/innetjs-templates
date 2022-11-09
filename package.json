@@ -8,22 +8,22 @@
     "lint:fix": "eslint --ext .tsx,.ts src --fix"
   },
   "dependencies": {
-    "@innet/dom": "^0.5.6",
-    "@innet/jsx": "^1.0.4",
+    "@innet/dom": "^0.8.2",
+    "@innet/jsx": "^1.1.0",
     "html-classes": "^2.0.2",
-    "innet": "^1.0.0",
-    "watch-state": "^3.4.4"
+    "innet": "^1.0.1",
+    "watch-state": "^3.4.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "eslint": "^8.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.5",
-    "eslint-plugin-promise": "^6.0.1",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "innetjs": "^2.0.12"
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "innetjs": "^2.2.6"
   }
 }

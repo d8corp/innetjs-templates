@@ -5,9 +5,9 @@ import styles from './App.scss'
 export const App = () => (
   <>
     <header class={styles.header}>
-      <a href='/' exact classes={styles}>Home</a>
-      <a href='/settings' classes={styles}>Settings</a>
-      <a href='/any-other' classes={styles}>404</a>
+      <a href='/' exact class={styles}>Home</a>
+      <a href='/settings' class={styles}>Settings</a>
+      <a href='/any-other' class={styles}>404</a>
     </header>
     <main class={styles.main}>
       <router>
