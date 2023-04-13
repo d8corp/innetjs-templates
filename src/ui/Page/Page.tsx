@@ -1,37 +1,31 @@
-import { Ref } from '@innet/dom'
 import { useChildren } from '@innet/jsx'
-import classes from 'html-classes'
-import { State } from 'watch-state'
 
-import { Async, AsyncProps } from '/ui/Async'
+import { Async, AsyncProps } from '../Async'
+import { PageContent } from '../PageContent'
 
-import styles from './Page.scss'
+export type EmptyProps = {}
+export type PageProps<T extends object> = AsyncProps<T> | EmptyProps
 
-export interface PageProps<T extends object> extends Partial<AsyncProps<T>> {
-
+function isAsyncProps<T extends object> (props: PageProps<T>): props is AsyncProps<T> {
+  return Boolean(props)
 }
 
 export function Page <T extends object> (props: PageProps<T>) {
-  const hidden = new Ref<State<boolean>>()
   const children = useChildren()
 
-  const contentChildren = props
+  const contentChildren = isAsyncProps(props)
     ? (
-      <Async {...(props as AsyncProps<T>)}>
+      <Async {...props}>
         {children}
       </Async>
       )
     : children
 
   return (
-    <delay ref={hidden} show={300} hide={300}>
-      <div
-        class={() => classes([
-          styles.root,
-          hidden.value.value && styles.hide,
-        ])}>
+    <delay show={300} hide={300}>
+      <PageContent>
         {contentChildren}
-      </div>
+      </PageContent>
     </delay>
   )
 }
