@@ -1,4 +1,3 @@
-import { JsxComponent } from '@innet/jsx'
 import { Cache, State } from 'watch-state'
 
 import styles from './HomePage.scss'
@@ -15,7 +14,7 @@ const handleInput = (e: Event) => {
   name.value = target.value
 }
 
-export const HomePage: JsxComponent = () => (
+export default () => (
   <div class={styles.root}>
     <img
       src={logo}

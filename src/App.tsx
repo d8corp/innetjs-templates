@@ -12,10 +12,7 @@ export const App = () => (
     <main class={styles.main}>
       <router>
         <slot name='/'>
-          <Page
-            promise={() => import('/pages/HomePage')}
-            name='HomePage'
-          />
+          <Page promise={() => import('/pages/HomePage')} />
         </slot>
         <slot name='settings'>
           <Page>
