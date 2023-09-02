@@ -1,4 +1,4 @@
-# be
+# api
 
 This is a template of `innetjs` to build server side application.
 
