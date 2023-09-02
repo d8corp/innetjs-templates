@@ -10,7 +10,7 @@ const handleStart = ({ port, https }: ServerStartParams) => {
 
 export function App () {
   return (
-    <server port={3000} onStart={handleStart}>
+    <server onStart={handleStart}>
       <api description={description} prefix='/api' title='@innet/server Template' version='0.0.1'>
         <swagger path='/swagger' />
         <license name='MIT' />
