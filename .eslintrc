@@ -13,6 +13,8 @@
     "jest": true
   },
   "rules": {
+    "no-use-before-define": "off",
+    "no-undef": "off",
     "no-new": "off",
     "no-unused-vars": "off",
     "one-var": "off",
