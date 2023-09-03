@@ -1,7 +1,7 @@
 import { AddTodo, DeleteTodo, EditTodo, GetTodo, GetTodos } from '/requests'
-import { ListQueryParams, ListSchema, TodoSchema } from '/schemas'
+import { List, ListQueryParams, Todo } from '/schemas'
 
-export function Todo () {
+export function TodoModule () {
   return (
     <tag
       name='todo'
@@ -10,14 +10,14 @@ export function Todo () {
         method='get'
         path='/todos'
         summary='Returns a list of todos'>
-        <param in='query' name='done'>
+        <param name='done' in='query'>
           <boolean />
         </param>
         <ListQueryParams />
         <response description='Response Description'>
-          <ListSchema key='todos'>
-            <TodoSchema />
-          </ListSchema>
+          <List key='todos'>
+            <Todo />
+          </List>
         </response>
         <request>
           <GetTodos />
@@ -28,7 +28,7 @@ export function Todo () {
         path='/todos'
         summary='Add a todo'>
         <body>
-          <TodoSchema add />
+          <Todo add />
         </body>
         <request>
           <AddTodo />
@@ -42,7 +42,7 @@ export function Todo () {
           <uuid />
         </param>
         <response description='Response Description'>
-          <TodoSchema />
+          <Todo />
         </response>
         <request>
           <GetTodo />

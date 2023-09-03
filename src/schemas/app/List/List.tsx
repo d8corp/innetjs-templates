@@ -4,7 +4,7 @@ export interface ListSchemaProps {
   key: string
 }
 
-export function ListSchema ({ key }: ListSchemaProps) {
+export function List ({ key }: ListSchemaProps) {
   const children = useChildren()
 
   return (

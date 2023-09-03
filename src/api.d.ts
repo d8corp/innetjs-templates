@@ -1,11 +1,21 @@
 declare namespace Api {
+  export interface Bin {
+    filename: string
+    fieldName: string
+    originalFilename: string
+    path: string
+    type: string
+    disposition: string
+    size: number
+    extension?: string
+  }
   namespace Schemas {
-    export type TodoSchema = {
+    export type Todo = {
       id: string
       title: string
       done: boolean
     }
-    export type TodoSchemaAdd = {
+    export type TodoAdd = {
       id: string
       title: string
       done: boolean
@@ -22,17 +32,17 @@ declare namespace Api {
         page: number
         pageSize: number
         count: number
-        todos: (Schemas.TodoSchema)[]
+        todos: (Schemas.Todo)[]
       }
     }
     ['POST:/todos']: {
-      Body: Schemas.TodoSchemaAdd
+      Body: Schemas.TodoAdd
     }
     ['GET:/todos/{todoId}']: {
       Params: {
         todoId: string
       }
-      Response: Schemas.TodoSchema
+      Response: Schemas.Todo
     }
     ['PATCH:/todos/{todoId}']: {
       Params: {

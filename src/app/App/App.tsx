@@ -1,6 +1,6 @@
 import { ServerStartParams } from '@innet/server'
 
-import { Todo } from '/tags'
+import { TodoModule } from '/modules'
 
 import description from './description.md'
 
@@ -18,7 +18,7 @@ export function App () {
         <fallback>
           <error code='unknownRequest' status={404} />
         </fallback>
-        <Todo />
+        <TodoModule />
         <dev>
           <dts path='src/api.d.ts' />
         </dev>

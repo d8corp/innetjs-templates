@@ -4,7 +4,7 @@ export interface TodoSchemaProps {
   add?: boolean
 }
 
-export function TodoSchema (props: TodoSchemaProps) {
+export function Todo (props: TodoSchemaProps) {
   const componentName = useComponentName()
   const ref = `${componentName}${props?.add ? 'Add' : ''}`
 

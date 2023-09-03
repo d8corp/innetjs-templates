@@ -1,2 +1,2 @@
-export * from './ListSchema'
+export * from './List'
 export * from './ListQueryParams'
