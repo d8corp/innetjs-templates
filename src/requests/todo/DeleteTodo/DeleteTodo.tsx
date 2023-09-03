@@ -3,7 +3,7 @@ import { useParams } from '@innet/server'
 import { todos } from '../todos'
 
 export function DeleteTodo () {
-  const { todoId } = useParams<Paths.Todos$TodoId.Delete.PathParameters>()
+  const { todoId } = useParams<Api.Endpoints['DELETE:/todos/{todoId}']['Params']>()
 
   const todoIndex = todos.findIndex(({ id }) => id === todoId)
 

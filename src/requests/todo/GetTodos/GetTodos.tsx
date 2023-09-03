@@ -4,10 +4,10 @@ import { todos as rootTodos } from '../todos'
 
 export function GetTodos () {
   const {
-    page = 1, // FIXME: wrong types
-    pageSize = 12, // FIXME: wrong types
+    page,
+    pageSize,
     done,
-  } = useSearch<Paths.Todos.Get.QueryParameters>()
+  } = useSearch<Api.Endpoints['GET:/todos']['Search']>()
 
   const rawTodos = done === undefined
     ? rootTodos
@@ -17,7 +17,7 @@ export function GetTodos () {
   const stop = start + pageSize
   const todos = rawTodos.slice(start, stop)
 
-  const data: Paths.Todos.Get.Responses.Default = {
+  const data: Api.Endpoints['GET:/todos']['Response'] = {
     todos,
     pageSize,
     page,

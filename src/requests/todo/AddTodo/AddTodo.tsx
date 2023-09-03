@@ -3,9 +3,9 @@ import { useBody } from '@innet/server'
 import { todos } from '../todos'
 
 export function AddTodo () {
-  const todo = useBody<Paths.Todos.Post.RequestBody>()
+  const todo = useBody<Api.Endpoints['POST:/todos']['Body']>()
 
-  todos.push(todo as any) // FIXME: wrong types generation
+  todos.push(todo)
 
   return <success />
 }
