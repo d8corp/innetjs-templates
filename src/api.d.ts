@@ -10,69 +10,38 @@ interface Bin {
 }
 declare namespace Components {
     namespace Schemas {
-        export interface AddressSchema {
-            id: number
-            active: null
+        export interface TodoSchema {
+            id: string // uuid
             /**
-             * City description
-             */
-            city: "msk" | "sml"
-            location: /**
-             * GPS Coordinates
              * example:
-             * [
-             *   40.741895,
-             *   -73.989308
-             * ]
+             * Create todo
              */
-            LocationSchema
+            title: string
+            done: boolean
         }
-        export interface EditPartnerSchema {
+        export interface TodoSchemaAdd {
+            id?: string // uuid
             /**
              * example:
-             * CANTent.
+             * Create todo
              */
-            name?: string
-            gift?: boolean
-            /**
-             * A square icon of the partner
-             */
-            icon?: Bin
-            addresses?: number[]
-        }
-        /**
-         * GPS Coordinates
-         * example:
-         * [
-         *   40.741895,
-         *   -73.989308
-         * ]
-         */
-        export type LocationSchema = any[]
-        export interface PartnerSchema {
-            /**
-             * example:
-             * cantent
-             */
-            id: string
-            /**
-             * example:
-             * CANTent.
-             */
-            name: string
-            gift: boolean
-            addresses?: AddressSchema[]
+            title: string
+            done?: boolean
         }
     }
 }
 declare namespace Paths {
-    namespace Partners {
+    namespace Todos {
         namespace Get {
             namespace Parameters {
-                export type Search = string
+                export type Done = boolean
+                export type Page = number
+                export type PageSize = number
             }
             export interface QueryParameters {
-                search?: Parameters.Search
+                done?: Parameters.Done
+                page?: Parameters.Page
+                pageSize?: Parameters.PageSize
             }
             namespace Responses {
                 /**
@@ -86,33 +55,44 @@ declare namespace Paths {
                      */
                     pageSize: number
                     count: number
-                    partners: Components.Schemas.PartnerSchema[]
+                    todos: Components.Schemas.TodoSchema[]
                 }
             }
         }
+        namespace Post {
+            export type RequestBody = Components.Schemas.TodoSchemaAdd
+        }
     }
-    namespace Partners$Id {
-        namespace Get {
+    namespace Todos$TodoId {
+        namespace Delete {
             namespace Parameters {
-                export type Id = string // uuid
+                export type TodoId = string // uuid
             }
             export interface PathParameters {
-                id: Parameters.Id /* uuid */
+                todoId: Parameters.TodoId /* uuid */
+            }
+        }
+        namespace Get {
+            namespace Parameters {
+                export type TodoId = string // uuid
+            }
+            export interface PathParameters {
+                todoId: Parameters.TodoId /* uuid */
             }
             namespace Responses {
-                export type Default = Components.Schemas.PartnerSchema
+                export type Default = Components.Schemas.TodoSchema
             }
         }
         namespace Patch {
             namespace Parameters {
-                export type Id = string
+                export type TodoId = string // uuid
             }
             export interface PathParameters {
-                id: Parameters.Id
+                todoId: Parameters.TodoId /* uuid */
             }
-            export type RequestBody = Components.Schemas.EditPartnerSchema
-            namespace Responses {
-                export type $220 = Components.Schemas.PartnerSchema
+            export interface RequestBody {
+                done?: boolean
+                title?: string
             }
         }
     }
