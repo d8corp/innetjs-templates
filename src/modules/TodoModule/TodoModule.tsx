@@ -19,9 +19,9 @@ export function TodoModule () {
             <Todo />
           </List>
         </response>
-        <request>
+        <return>
           <GetTodos />
-        </request>
+        </return>
       </endpoint>
       <endpoint
         method='post'
@@ -30,9 +30,9 @@ export function TodoModule () {
         <body>
           <Todo add />
         </body>
-        <request>
+        <return>
           <AddTodo />
-        </request>
+        </return>
       </endpoint>
       <endpoint
         method='get'
@@ -44,9 +44,9 @@ export function TodoModule () {
         <response description='Response Description'>
           <Todo />
         </response>
-        <request>
+        <return>
           <GetTodo />
-        </request>
+        </return>
       </endpoint>
       <endpoint
         method='patch'
@@ -65,9 +65,9 @@ export function TodoModule () {
             </field>
           </object>
         </body>
-        <request>
+        <return>
           <EditTodo />
-        </request>
+        </return>
       </endpoint>
       <endpoint
         method='delete'
@@ -76,9 +76,9 @@ export function TodoModule () {
         <param in='path' name='todoId'>
           <uuid />
         </param>
-        <request>
+        <return>
           <DeleteTodo />
-        </request>
+        </return>
       </endpoint>
     </tag>
   )

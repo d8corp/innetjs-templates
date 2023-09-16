@@ -5,14 +5,14 @@ import { TodoModule } from '/modules'
 import description from './description.md'
 
 const handleStart = ({ port, https }: ServerStartParams) => {
-  console.log(`http${https ? 's' : ''}://localhost:${port}/api/swagger`)
+  console.log(`http${https ? 's' : ''}://localhost:${port}/api/ui`)
 }
 
 export function App () {
   return (
     <server onStart={handleStart}>
       <api description={description} prefix='/api' title='@innet/server Todo Template' version='0.0.1'>
-        <swagger path='/swagger' />
+        <swagger path='/ui' />
         <license name='MIT' />
         <host url='http://localhost:3000/api' />
         <contact name='Mike' email='d8@cantinc.com' />
@@ -21,9 +21,9 @@ export function App () {
           <dts path='src/api.d.ts' />
         </env>
       </api>
-      <request>
+      <return>
         <error code='unknownRequest' status={404} />
-      </request>
+      </return>
     </server>
   )
 }
