@@ -17,9 +17,9 @@ export function App () {
         <host url='http://localhost:3000/api' />
         <contact name='Mike' email='d8@cantinc.com' />
         <TodoModule />
-        <dev>
+        <env is='dev'>
           <dts path='src/api.d.ts' />
-        </dev>
+        </env>
       </api>
       <request>
         <error code='unknownRequest' status={404} />
