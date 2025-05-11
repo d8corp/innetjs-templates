@@ -14,7 +14,8 @@ export function App () {
       <api description={description} prefix='/api' title='@innet/server Todo Template' version='0.0.1'>
         <swagger path='/ui' />
         <license name='MIT' />
-        <host url='http://localhost:3000/api' />
+        <host url='http://localhost/api' />
+        <host url='https://localhost:443/api' />
         <contact name='Mike' email='d8@cantinc.com' />
         <TodoModule />
         <env is='dev'>

@@ -39,6 +39,9 @@ declare namespace Api {
     }
     ['POST:/todos']: {
       Body: Schemas.TodoAdd
+      Response: {
+        ['204']: void
+     }
     }
     ['GET:/todos/{todoId}']: {
       Params: {

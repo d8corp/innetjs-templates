@@ -2,11 +2,10 @@ import { useChildren } from '@innet/jsx'
 
 export interface ListSchemaProps {
   key: string
+  children?: JSX.Element
 }
 
-export function List ({ key }: ListSchemaProps) {
-  const children = useChildren()
-
+export function List ({ key, children }: ListSchemaProps) {
   return (
     <object description='test1'>
       <field key='page'><integer default={1} /></field>

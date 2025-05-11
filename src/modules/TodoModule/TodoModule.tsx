@@ -30,6 +30,7 @@ export function TodoModule () {
         <body>
           <Todo add />
         </body>
+        <response status={204} />
         <return>
           <AddTodo />
         </return>
