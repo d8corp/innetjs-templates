@@ -1,6 +1,8 @@
+import './styles.scss'
+
 import innet from 'innet'
-import dom from '@innet/dom'
+import dom, { Router } from '@innet/dom'
 
-import { App } from '/App'
+import { routing } from '/routing'
 
-innet(<App />, dom)
+innet(<Router routing={routing} />, dom)
