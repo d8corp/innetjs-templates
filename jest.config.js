@@ -1,5 +1,5 @@
 module.exports = {
-  preset: 'innet-jest',
+  preset: 'ts-jest',
   testEnvironment: 'node',
   setupFiles: ['core-js'],
   coverageDirectory: 'coverage',

@@ -22,7 +22,8 @@
     "removeComments": true,
     "declaration": false,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "@innet/jsx-runtime"
   },
   "include": [
     "src"

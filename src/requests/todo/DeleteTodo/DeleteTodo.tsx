@@ -1,14 +1,14 @@
-import { useParams } from '@innet/server'
+import { useData } from '@innet/server'
 
 import { todos } from '../todos'
 
-export function DeleteTodo () {
-  const { todoId } = useParams<Api.Endpoints['DELETE:/todos/{todoId}']['Params']>()
+export function DeleteTodo() {
+  const { todoId } = useData('params', 'DELETE:/todos/{todoId}')
 
   const todoIndex = todos.findIndex(({ id }) => id === todoId)
 
   if (todoIndex === -1) {
-    return <error code='todoNotFound' status={404} />
+    return <error code="todoNotFound" status={404} />
   }
 
   todos.splice(todoIndex, 1)

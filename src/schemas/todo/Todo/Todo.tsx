@@ -4,19 +4,19 @@ export interface TodoSchemaProps {
   add?: boolean
 }
 
-export function Todo (props: TodoSchemaProps) {
+export function Todo(props: TodoSchemaProps) {
   const componentName = useComponentName()
   const ref = `${componentName}${props?.add ? 'Add' : ''}`
 
   return (
     <object ref={ref}>
-      <field optional={props?.add} key='id'>
+      <field optional={props?.add} key="id">
         <uuid default={props?.add ? 'new' : undefined} />
       </field>
-      <field key='title'>
-        <string example='Create todo' />
+      <field key="title">
+        <string example="Create todo" />
       </field>
-      <field optional={props?.add} key='done'>
+      <field optional={props?.add} key="done">
         <boolean default={props?.add ? false : undefined} />
       </field>
     </object>

@@ -1,21 +1,14 @@
-declare namespace Api {
-  export interface Bin {
-    filename: string
-    fieldName: string
-    originalFilename: string
-    path: string
-    type: string
-    disposition: string
-    size: number
-    extension?: string
-  }
-  namespace Schemas {
-    export type Todo = {
+import '@innet/server'
+
+declare global {
+  namespace Api {
+    export interface Schemas {
+    TodoAdd: {
       id: string
       title: string
       done: boolean
     }
-    export type TodoAdd = {
+    Todo: {
       id: string
       title: string
       done: boolean
@@ -23,47 +16,53 @@ declare namespace Api {
   }
   export interface Endpoints {
     ['GET:/todos']: {
-      Search: {
+      search: {
         done?: boolean
         page: number
         pageSize: number
       }
-      Response: {
+      response: {
         ['default']: {
           page: number
           pageSize: number
           count: number
-          todos: Array<Schemas.Todo>
+          todos: Array<Schemas['Todo']>
         }
      }
     }
     ['POST:/todos']: {
-      Body: Schemas.TodoAdd
-      Response: {
+      body: Schemas['TodoAdd']
+      response: {
         ['204']: void
      }
     }
     ['GET:/todos/{todoId}']: {
-      Params: {
+      params: {
         todoId: string
       }
-      Response: {
-        ['default']: Schemas.Todo
+      response: {
+        ['default']: Schemas['Todo']
      }
     }
     ['PATCH:/todos/{todoId}']: {
-      Params: {
+      params: {
         todoId: string
       }
-      Body: {
+      body: {
         done?: boolean
         title?: string
       }
     }
     ['DELETE:/todos/{todoId}']: {
-      Params: {
+      params: {
         todoId: string
       }
     }
   }
+  }
+}
+
+declare module '@innet/server' {
+  interface ApiEndpoints extends Api.Endpoints {}
+  interface ApiSchemas extends Api.Schemas {}
 }

@@ -1,1 +1,1 @@
-export const todos: Api.Schemas.Todo[] = []
+export const todos: Api.Schemas['Todo'][] = []

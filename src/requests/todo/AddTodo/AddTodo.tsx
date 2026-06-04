@@ -1,9 +1,9 @@
-import { useBody } from '@innet/server'
+import { useData } from '@innet/server'
 
 import { todos } from '../todos'
 
-export function AddTodo () {
-  const todo = useBody<Api.Endpoints['POST:/todos']['Body']>()
+export function AddTodo() {
+  const todo = useData('body', 'POST:/todos')
 
   todos.push(todo)
 
