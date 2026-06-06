@@ -1,13 +1,8 @@
-# api
+# api lib
 
-This is a template of `innetjs` to build server side application.
+This is a template of `innetjs` to build server side library.
 
 This template includes linting and testing.
-
-To start development run:
-```shell
-npm start
-```
 
 To build the application run:
 ```shell
