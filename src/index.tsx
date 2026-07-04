@@ -1,6 +1,12 @@
 import { innet } from 'innet'
-import { handler } from '@innet/server'
+import { handler } from '@innet/node'
 
-import { App } from '/app/App'
+import { HelloWorld } from './components/HelloWorld'
+import { Server } from './components/Server'
 
-innet(<App />, handler)
+innet(
+  <Server>
+    <HelloWorld />
+  </Server>,
+  handler,
+)
